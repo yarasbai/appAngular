@@ -10,8 +10,17 @@ export class TodoComponent implements OnInit {
   constructor() { }
 texte: string;
 heure: string;
-events = [];
+events : String[];
   ngOnInit(): void {
+    this.events=[];
   }
+add()
+{
+  this.events.push(this.texte+ "/ "+ this.heure);
 
+  this.heure="";
+  this.texte="";
+  console.log("added event");
+
+}
 }

@@ -1,11 +1,16 @@
 <form #myForm="ngForm">
     <table>
         <tr>
-            <td>Texte</td> <td> <input [(ngModel)]="texte"  type="text" pattern="[A-Z a-z0-9]{2,30}" required> </td>
+            <td>Texte</td> <td> <input [(ngModel)]="texte"  name="texte" type="text" pattern="[A-Z a-z0-9]{2,30}" required> </td>
         </tr>
         <tr>
-            <td>Heure</td> <td> <input [(ngModel)]="heure" type="datetime-local"  required > </td>
+            <td>Heure</td> <td> <input [(ngModel)]="heure" type="datetime-local" name="heures"  required > </td>
         </tr>
-        <tr> <td><input value="Ajouter" [disabled]="myForm.invalid" class="btn btn-success" type="submit"></td></tr>
+        <tr> <td><input value="Ajouter" (click)="add()" [disabled]="myForm.invalid" class="btn btn-success" type="submit"></td></tr>
     </table>
 </form>
+<table>
+<tr><th>Evennement</th></tr>
+<tr *ngFor="let ev of events"><td>{{ev}}</td></tr>
+
+</table>

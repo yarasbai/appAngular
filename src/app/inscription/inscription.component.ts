@@ -15,5 +15,15 @@ user:User;
     this.user = new User();
 
   }
+  save()
+  {
+localStorage.setItem("nom",this.user.nom);
+localStorage.setItem("prenom",this.user.prenom);
+localStorage.setItem("email",this.user.email);
+localStorage.setItem("mdp",this.user.mdp);
+window.location.replace("");
+
+
+  }
 
 }

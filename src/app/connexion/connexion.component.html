@@ -7,8 +7,10 @@
         <tr>
             <td> Mot de passe</td> <td><input [(ngModel)]="user.mdp"  #mdp="ngModel" pattern="[A-Z a-z0-9]{3,20}" name="mdp" type="password" required> </td>
         </tr>
-        <tr>
-            <td> <input value="Se connecter" [disabled]="myForm.invalid" class="btn btn-primary" type="submit"></td>
+        <tr><a href="inscription">pas encore membre?</a>
+        
+            <td> <input value="Se connecter" (click)="auth()" [disabled]="myForm.invalid" class="btn btn-primary" type="submit"></td>
         </tr>
     </table>
+    <div *ngIf="error"> le email ou mot de passe est incorrecte</div>
 </form>

@@ -11,8 +11,18 @@ export class ProfilComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.user = new User;
-  }
+    if(localStorage.getItem("etat")=="0")
+    window.location.replace("");
+    this.user = new User();
+this.user.email=localStorage.getItem("email");
+this.user.mdp=localStorage.getItem("mdp");
+this.user.prenom=localStorage.getItem("prenom");
+this.user.nom=localStorage.getItem(" nom");
 
+}
 
+deconnect()
+{
+  localStorage.setItem("etat","0");
+}
 }

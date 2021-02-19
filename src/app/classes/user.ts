@@ -1,9 +1,10 @@
 export class User {
-    nom : string;
-    prenom : string;
-    email : string;
-    mdp : string;
-    
+    nom : any;
+    prenom : any;
+    email : any;
+    mdp : any;
+    constructor()
+    {}
 }
 
 

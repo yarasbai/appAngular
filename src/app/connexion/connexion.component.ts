@@ -12,6 +12,8 @@ error=false;
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.setItem("etat","0");
+
     this.user = new User;
   }
   auth()
@@ -19,7 +21,10 @@ error=false;
 const log=localStorage.getItem("email");
 const pass=localStorage.getItem("mdp");
 if((this.user.email==log)&&(this.user.mdp==pass))
+{
 window.location.replace("profile");
+localStorage.setItem("etat","1");
+}
 else 
 this.error=true;
 

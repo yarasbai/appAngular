@@ -21,16 +21,3 @@
     </table>
 </form>
 
-<div *ngIf="nom.invalid && (nom.touched || nom.dirty)">
-    <div *ngIf="nom.errors.required">
-        Le nom est obligatoire
-    </div>
-    <div *ngIf="nom.errors.pattern">
-        Le nom ne peut contenir que de lettre
-    </div>
-</div>
-<div *ngIf="(mdp.touched || mdp.dirty) && (rmdp.touched || rmdp.dirty")>
-    <div *ngIf="mdp != rmdp ">
-        mdp incorrecte
-    </div>
-</div>

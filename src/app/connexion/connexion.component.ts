@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-connexion',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-
+  user:User;
   constructor() { }
 
   ngOnInit(): void {
+    this.user = new User;
   }
 
 }

@@ -2,15 +2,15 @@
     <table align="center">
         
         <tr>
-            <td> Email</td> <td><input [(ngModel)]="user.email"  #email="ngModel" name="email" type="email" required > </td>
+            <td> Email</td> <td><input class="form-control" [(ngModel)]="user.email"  #email="ngModel" name="email" type="email" required > </td>
         </tr>
         <tr>
-            <td> Mot de passe</td> <td><input [(ngModel)]="user.mdp"  #mdp="ngModel" pattern="[A-Z a-z0-9]{3,20}" name="mdp" type="password" required> </td>
+            <td> Mot de passe</td> <td><input class="form-control" [(ngModel)]="user.mdp"  #mdp="ngModel" pattern="[A-Z a-z0-9]{3,20}" name="mdp" type="password" required> </td>
         </tr>
         <tr><a href="inscription">pas encore membre?</a>
         
             <td> <input value="Se connecter" (click)="auth()" [disabled]="myForm.invalid" class="btn btn-primary" type="submit"></td>
         </tr>
     </table>
-    <div *ngIf="error"> le email ou mot de passe est incorrecte</div>
+    <div *ngIf="error" class="alert alert-danger" role="alert" > le email ou mot de passe est incorrecte</div>
 </form>

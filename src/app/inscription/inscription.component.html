@@ -1,1 +1,36 @@
-<p>inscription works!</p>
+<form #myForm="ngForm">
+    <table align="center">
+        <tr>
+            <td> Nom</td> <td><input [(ngModel)]="user.nom" #nom="ngModel" pattern="[A-Z a-z]{3,20}" name="nom" type="text" required> </td>
+        </tr>
+        <tr>
+            <td> Prenom</td> <td><input [(ngModel)]="user.prenom" #prenom="ngModel" pattern="[A-Z a-z]{3,20}" name="prenom" type="text" required > </td>
+        </tr>
+        <tr>
+            <td> Email</td> <td><input [(ngModel)]="user.email"  #email="ngModel" name="email" type="email" required > </td>
+        </tr>
+        <tr>
+            <td> Mot de passe</td> <td><input [(ngModel)]="user.mdp"  #mdp="ngModel" pattern="[A-Z a-z0-9]{3,20}" name="mdp" type="password" required> </td>
+        </tr>
+        <tr>
+            <td> Repeter Mot de passe</td> <td><input [(ngModel)]="rmdpp"  #rmdp="ngModel" pattern="[A-Z a-z0-9]{3,20}" name="mdp" type="password" required> </td>
+        </tr>
+        <tr>
+            <td> <input value="Valider" [disabled]="myForm.invalid" class="btn btn-primary" type="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<div *ngIf="nom.invalid && (nom.touched || nom.dirty)">
+    <div *ngIf="nom.errors.required">
+        Le nom est obligatoire
+    </div>
+    <div *ngIf="nom.errors.pattern">
+        Le nom ne peut contenir que de lettre
+    </div>
+</div>
+<div *ngIf="(mdp.touched || mdp.dirty) && (rmdp.touched || rmdp.dirty")>
+    <div *ngIf="mdp != rmdp ">
+        mdp incorrecte
+    </div>
+</div>
